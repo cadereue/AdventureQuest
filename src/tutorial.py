@@ -74,7 +74,7 @@ def training_dummy():
 
     typewritter('\nWell done, you have completed the tutorial, here is a little gift to help you on your journey')
     while True:
-        player_upgrade = input('Would you like to improve Stamina(+2), [2] Health(+10), or [3] Sword Damage(+5)?').lower()
+        player_upgrade = input('Would you like to improve [1] Stamina(+2), [2] Health(+10), or [3] Sword Damage(+5)?').lower()
         if player_upgrade == "1":
             player_settings.player_skill['Stamina'] += 2
             typewritter('You received a magic potion that increases your stamina: Stamina +2')

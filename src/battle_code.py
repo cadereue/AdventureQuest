@@ -4,7 +4,7 @@ def dragon():
     Player = player_settings.player_name
     enemy_type = 'Dragon'
     Alive = True
-    #Fight code
+    #Fight code 3
     print(enemy_settings.dragon_skill_table())
     print(player_settings.skill_table())
     while Alive == True:
@@ -242,18 +242,18 @@ def malakar():
                 player_settings.player_skill['Stamina'] -= 2
                 enemy_settings.malakar_skill['Health'] -= player_settings.player_skill['Sword Slash']
                 typewriter(f'{Player} used sword slash: -{player_settings.player_skill['Sword Slash']} enemy health')
-                break            
+                            
             elif player_attack == '2' and player_settings.player_skill['Stamina'] >= 3:
                 if 'Lightning Bolt' in player_settings.player_skill:
                     enemy_settings.malakar_skill['Health'] -= player_settings.player_skill['Lightning Bolt']
                     player_settings.player_skill['Stamina'] -= 3
                     typewriter(f'{Player} used Lightning Bolt: -{player_settings.player_skill['Lightning Bolt']} enemy health')
-                    break
+                    
                 elif 'Dark Magic' in player_settings.player_skill:
                     enemy_settings.malakar_skill['Health'] -= player_settings.player_skill['Dark Magic']
                     player_settings.player_skill['Stamina'] -= 3
                     typewriter(f'{Player} used Dark Magic: -{player_settings.player_skill['Dark Magic']} enemy health')
-                    break
+                    
                 else:
                     print('Please enter a valid key')
     
@@ -261,11 +261,11 @@ def malakar():
                 player_settings.player_skill['Stamina'] -= 3
                 player_settings.player_skill['Health'] += player_settings.player_skill['Health Potion']
                 typewriter(f'{Player} used health potion: +{player_settings.player_skill['Health Potion']} health')
-                break
+                
             else:
                 player_settings.player_skill['Stamina'] += player_settings.player_skill['Catch Breath']
                 typewriter(f'{Player} decided to catch their breath: +{player_settings.player_skill['Catch Breath']} stamina')
-                break        
+                        
         
         #Enemy move
             if enemy_attack_chance == 1:
@@ -339,7 +339,7 @@ def erevos():
                 player_settings.player_skill['Stamina'] -= 2
                 enemy_settings.erevos_skill['Health'] -= player_settings.player_skill['Sword Slash']
                 typewriter(f'{Player} used sword slash: -{player_settings.player_skill['Sword Slash']} enemy health')
-                break            
+                            
             elif player_attack == '2' and player_settings.player_skill['Stamina'] >= 3:
                 if 'Lightning Bolt' in player_settings.player_skill:
                     enemy_settings.erevos_skill['Health'] -= player_settings.player_skill['Lightning Bolt']
@@ -358,31 +358,35 @@ def erevos():
                 player_settings.player_skill['Stamina'] -= 3
                 player_settings.player_skill['Health'] += player_settings.player_skill['Health Potion']
                 typewriter(f'{Player} used health potion: +{player_settings.player_skill['Health Potion']} health')
-                break
+                
             else:
                 player_settings.player_skill['Stamina'] += player_settings.player_skill['Catch Breath']
                 typewriter(f'{Player} decided to catch their breath: +{player_settings.player_skill['Catch Breath']} stamina')
-                break        
+                        
         #Aldric move
             if alrdic_attack_chance == 1:
                 typewriter(f'{ally_type} used Sword of Truth: -{enemy_settings.aldric_skill['Sword of Truth']} enemy health')
                 enemy_settings.erevos_skill['Health'] -= enemy_settings.aldric_skill['Sword of Truth']
-                break
+                
             elif alrdic_attack_chance == 2:
                 typewriter(f'{ally_type} used Shield of Nobility: +{enemy_settings.aldric_skill['Shield of Nobility']} health')
                 player_settings.player_skill['Health'] += enemy_settings.aldric_skill['Shield of Nobility']
                 enemy_settings.aldric_skill['Health'] += enemy_settings.aldric_skill['Shield of Nobility']
-                break
+                
             elif alrdic_attack_chance == 3:
                 typewriter(f'{ally_type} used Gods of the Divine: -{enemy_settings.aldric_skill['Gods of the Divine']} enemy health')
                 enemy_settings.erevos_skill['Health'] -= enemy_settings.aldric_skill['Gods of the Divine']
-                break
+                
             
             #Enemy move
             if enemy_attack_chance == 1:
-                typewriter(f'{enemy_type} used Dark Synergy: -{enemy_settings.erevos_skill['Dark Synergy']} health')
-                player_settings.player_skill['Health'] -= enemy_settings.erevos_skill['Dark Synergy']
-                break
+                dodge_chance = random.randint(1,5)
+                if dodge_chance == 2:
+                    typewriter(f'{enemy_type} used Dark Synergy: -{enemy_settings.erevos_skill['Dark Synergy']} health')
+                    player_settings.player_skill['Health'] -= enemy_settings.erevos_skill['Dark Synergy']
+                    break
+                else:
+                    typewriter(f'{Player} dodged Dark Synergy')
             elif enemy_attack_chance == 2:
                 typewriter(f'{enemy_type} used Dark Sword: -{enemy_settings.erevos_skill['Dark Sword']} health')
                 player_settings.player_skill['Health'] -= enemy_settings.erevos_skill['Dark Sword']

@@ -7,6 +7,31 @@ import intro_story, stage1_,stage2_,stage3_,stage4_,stage5_,stage6_,stage7_
 import spareOrkill, spare  # assuming you have a spare.py for mercy path
 from effects import typewriter,clear_console
 from spareOrkill import start_spareorkill
+#Testing
+if player_settings.player_name == 'test':
+    sword = int(input('input sword damage:'))
+    health = int(input('input player health:'))
+    stamina = int(input('input player stamina:'))
+    player_settings.player_skill['Sword Slash'] = sword
+    player_settings.player_skill['Health'] = health
+    player_settings.player_skill['Stamina'] = stamina
+    battle = input('Who would you like to battle?:').lower()
+    if battle == 'goblin':
+        battle_code.goblin()
+    elif battle == 'fallen_guard':
+        battle_code.fallen_guard()
+    elif battle == 'dragon':
+        battle_code.dragon()
+    elif battle == 'malakar':
+        battle_code.malakar()
+    elif battle == 'erevos':
+        battle_code.erevos()
+    else:
+        print('not found')
+        
+
+
+
 def main():
     playerAlive = True
     print(f'Welcome {player_settings.player_name}')

@@ -73,7 +73,7 @@ def malakar_skill_table():
 #Aldric pics up the player to join him in battle and grants the player more health and stamina only if the player spared him
 aldric_skill = {'Health':450,
                 'Sword of Truth': 150,
-                'Shield of Nobility': 50, #Will heal you and aldric
+                'Shield of Nobility': 100, #Will heal you and aldric
                 'Gods of the Divine': 200} #Drops swords from the sky on erevos
 
 erevos_skill = {'Health':2000,
